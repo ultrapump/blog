@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    {%- seo -%}
+    <link rel="icon" href="{{ "/favicon.ico" | relative_url }}" sizes="any">
+    <link rel="stylesheet" href="{{ "/assets/css/crypto.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/code.css" | relative_url }}">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        if (window.mermaid) {
+          mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+        }
+      });
+    </script>
+  </head>
+  <body class="crypto-landing">
+    <div class="grid-overlay"></div>
+    <header class="crypto-header">
+      <div class="crypto-logo"><a href="{{ '/' | relative_url }}">ULTRAPUMP.IO</a></div>
+      <div class="crypto-status"><div class="status-indicator"></div><span>ENGINEERING BLOG</span></div>
+    </header>
+    <main class="site-content" style="max-width: 960px; margin: 8rem auto 3rem; padding: 0 1.25rem;">
+      {{ content }}
+    </main>
+    <footer style="text-align:center; color: var(--text-secondary); padding: 2rem 0; border-top: 1px solid var(--border-subtle);">
+      © {{ site.time | date: '%Y' }} Ultrapump
+    </footer>
+  </body>
+  </html>
+
+

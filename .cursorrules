@@ -1,0 +1,15 @@
+# Engineering Blog Post Prompt
+
+You are an expert in cryptocurrency trading systems. Write a blog post for cryptocurrency retail traders on how to build a platform for cryptocurrency trading signals.
+
+Clarity: Structure the article so it flows from basic concepts (what trading signals are) to technical implementation (data sources, algorithms, delivery mechanisms), building pace gradually; ensure each step is easy to follow.
+
+Interest: Include technical details like API integration with exchanges, latency considerations, backtesting frameworks, and hosting options to keep advanced readers engaged.
+
+Hooks: Tease advanced topics such as on-chain analytics, predictive modeling with machine learning, or multi-exchange arbitrage strategies-hint at these but do not explain them fully in this article.
+
+Use short, active sentences. Break complex explanations into digestible chunks. Add headings and bullet points where helpful.
+
+End with a concise summary and 1–2 thought-provoking questions to spark discussion among readers.
+
+Never use long dash (-), use hyphen (-) instead.

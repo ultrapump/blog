@@ -1,0 +1,36 @@
+title: Ultrapump Blog
+description: Engineering notes and product updates from Ultrapump
+url: https://ultrapump.io
+baseurl: ""
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+permalink: /:categories/:year/:month/:day/:title/
+
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Ultrapump Engineering
+
+exclude:
+  - app-service
+  - notes
+  - node_modules
+
+
