@@ -1,6 +1,6 @@
 title: Ultrapump Blog
 description: Engineering notes and product updates from Ultrapump
-url: https://ultrapump.io
+url: https://blog.ultrapump.io
 baseurl: ""
 plugins:
   - jekyll-seo-tag

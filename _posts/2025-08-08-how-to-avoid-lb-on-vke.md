@@ -1,6 +1,6 @@
 ---
-title: How to avoid load balancers on Vultr Kubernetes Engine
-description: How to run nginx ingress with TLS termination directly on a VKE node - and the hurdles Vultr puts in your way.
+title: How to avoid LB on VKE
+description: Terminating TLS with nginx-ingress directly on a Vultr Kubernetes Engine node without load balancers - and the hurdles Vultr puts in your way.
 image: /assets/img/img2.png
 ---
 

@@ -14,6 +14,23 @@
         if (window.mermaid) {
           mermaid.initialize({ startOnLoad: true, theme: 'dark' });
         }
+        
+        // Add fragment links to headings
+        const headings = document.querySelectorAll('.site-content h1, .site-content h2, .site-content h3');
+        headings.forEach(heading => {
+          const id = heading.textContent.toLowerCase()
+            .replace(/[^a-z0-9\s]/g, '')
+            .replace(/\s+/g, '-')
+            .trim();
+          heading.id = id;
+          
+          const anchor = document.createElement('a');
+          anchor.href = '#' + id;
+          anchor.className = 'heading-anchor';
+          anchor.textContent = '#';
+          anchor.setAttribute('aria-label', 'Link to this heading');
+          heading.prepend(anchor);
+        });
       });
     </script>
   </head>
@@ -22,11 +39,9 @@
     <header class="crypto-header">
       <div class="header-left">
         <div class="crypto-logo">
-          <a href="https://blog.ultrapump.io">blog.ultrapump.io</a>
+          <a href="https://blog.ultrapump.io">BLOG.ULTRAPUMP.IO</a>
         </div>
-        <a class="cta-button" href="https://ultrapump.io" target="_blank" rel="noopener">Go to Ultrapump</a>
-      </div>
-      <div class="header-right">
+        <a class="cta-button" href="https://ultrapump.io" target="_blank" rel="noopener">GO TO APP</a>
         <nav class="social-icons" aria-label="Social links">
           <a class="social-icon" href="https://github.com/ultrapump" target="_blank" rel="noopener" aria-label="GitHub">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.11-.76.41-1.27.75-1.56-2.57-.29-5.27-1.29-5.27-5.73 0-1.27.46-2.31 1.2-3.12-.12-.29-.52-1.45.11-3.02 0 0 .98-.31 3.2 1.19a11.05 11.05 0 0 1 5.82 0c2.22-1.5 3.2-1.19 3.2-1.19.63 1.57.23 2.73.11 3.02.75.81 1.2 1.85 1.2 3.12 0 4.45-2.71 5.43-5.29 5.72.42.36.8 1.08.8 2.18v3.24c0 .31.2.68.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
@@ -35,6 +50,8 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21l-6.5 7.43L22 22h-6.9l-4.3-5.6L5.8 22H3l7-8-6.6-8h7l3.7 4.86L18.244 2Z"/></svg>
           </a>
         </nav>
+      </div>
+      <div class="header-right">
         <div class="crypto-status"><div class="status-indicator"></div><span>ENGINEERING BLOG</span></div>
       </div>
     </header>
