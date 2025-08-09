@@ -26,6 +26,11 @@ html, body {
 .crypto-logo a:first-child { opacity: 0.85; }
 .crypto-logo a + a { color: var(--accent-green); }
 .crypto-status { display: flex; align-items: center; gap: 0.75rem; font-size: 0.875rem; color: var(--text-secondary); }
+.crypto-actions { display: flex; align-items: center; gap: 0.75rem; margin-left: auto; margin-right: 1rem; }
+.social-icon { color: var(--text-secondary); display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid var(--border-subtle); border-radius: 8px; background: rgba(26,26,26,0.6); transition: all .2s ease; }
+.social-icon:hover { color: var(--accent-green); box-shadow: 0 0 12px var(--shadow-glow); }
+.cta-button { background: var(--accent-green); color: #0d0d0d; font-weight: 700; padding: 0.5rem 0.9rem; border-radius: 8px; text-decoration: none; border: 0; box-shadow: 0 0 16px rgba(0,255,136,0.25); transition: transform .1s ease, box-shadow .2s ease; }
+.cta-button:hover { transform: translateY(-1px); box-shadow: 0 0 24px rgba(0,255,136,0.35); }
 .status-indicator { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-green); box-shadow: 0 0 10px var(--accent-green); animation: pulse 2s infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
 
