@@ -21,16 +21,24 @@ html, body {
 
 .crypto-landing { background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); min-height: 100vh; position: relative; }
 .crypto-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; background: rgba(13, 13, 13, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-subtle); }
+.crypto-header a { text-decoration: none; }
 .crypto-logo { font-family: 'Orbitron', monospace; font-size: 1.1rem; font-weight: 900; color: var(--accent-green); text-shadow: 0 0 20px var(--shadow-glow); letter-spacing: 2px; }
 .crypto-logo a { color: var(--accent-green); text-decoration: none; }
 .crypto-logo a:first-child { opacity: 0.85; }
 .crypto-logo a + a { color: var(--accent-green); }
 .crypto-status { display: flex; align-items: center; gap: 0.75rem; font-size: 0.875rem; color: var(--text-secondary); }
-.crypto-actions { display: flex; align-items: center; gap: 0.75rem; margin-left: auto; margin-right: 1rem; }
-.social-icon { color: var(--text-secondary); display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid var(--border-subtle); border-radius: 8px; background: rgba(26,26,26,0.6); transition: all .2s ease; }
-.social-icon:hover { color: var(--accent-green); box-shadow: 0 0 12px var(--shadow-glow); }
-.cta-button { background: var(--accent-green); color: #0d0d0d; font-weight: 700; padding: 0.5rem 0.9rem; border-radius: 8px; text-decoration: none; border: 0; box-shadow: 0 0 16px rgba(0,255,136,0.25); transition: transform .1s ease, box-shadow .2s ease; }
-.cta-button:hover { transform: translateY(-1px); box-shadow: 0 0 24px rgba(0,255,136,0.35); }
+.crypto-actions { display: flex; align-items: center; gap: 0.6rem; margin-left: auto; margin-right: 0.5rem; }
+.social-icon { color: var(--text-secondary); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--border-subtle); border-radius: 10px; background: rgba(26,26,26,0.65); transition: all .2s ease; }
+.social-icon:hover { color: var(--accent-green); border-color: rgba(0,255,136,0.45); box-shadow: 0 0 14px var(--shadow-glow); }
+.cta-button, .cta-button:visited { display: inline-block; background: linear-gradient(135deg, var(--accent-green), #00e07a); color: #0c0c0c; font-weight: 800; padding: 0.48rem 0.95rem; border-radius: 10px; border: 1px solid rgba(0,255,136,0.45); box-shadow: 0 6px 18px rgba(0,255,136,0.25); letter-spacing: 0.2px; }
+.cta-button:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,255,136,0.35); }
+.cta-button:active { transform: translateY(0); box-shadow: 0 4px 14px rgba(0,255,136,0.2); }
+
+@media (max-width: 640px) {
+  .crypto-actions { gap: 0.45rem; }
+  .cta-button, .cta-button:visited { padding: 0.4rem 0.7rem; font-weight: 700; }
+  .social-icon { width: 32px; height: 32px; }
+}
 .status-indicator { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-green); box-shadow: 0 0 10px var(--accent-green); animation: pulse 2s infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
 
