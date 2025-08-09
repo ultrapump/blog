@@ -1,5 +1,5 @@
 ---
-title: our mission
+title: Our Mission
 description: Ultrapump's vision and the principles guiding our build.
 image: /assets/img/img1.png
 ---
