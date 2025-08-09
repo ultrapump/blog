@@ -1,6 +1,7 @@
 ---
 title: nginx ingress, vultr kubernetes engine and no load balancers - The Hard Way™
 description: Setting up direct-node nginx ingress on Vultr VKE and the Calico eBPF gotcha.
+image: /assets/img/img2.png
 ---
 
 Latency is the product. Trading signals that arrive late are wrong by definition. To deliver consistently low latency for users in the US, EU and APAC, we operate geo-distributed infrastructure: multiple Kubernetes clusters in different regions, close to the exchanges and to our users. Centralizing in one hyperscale region would simplify life, but it would also add avoidable milliseconds at the edge where they hurt the most.

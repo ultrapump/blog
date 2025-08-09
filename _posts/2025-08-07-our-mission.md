@@ -1,6 +1,7 @@
 ---
 title: our mission
 description: Ultrapump's vision and the principles guiding our build.
+image: /assets/img/img1.png
 ---
 
 Ultrapump exists to deliver reliable, actionable trading signals with the lowest possible latency-globally. New retail traders deserve clarity, not noise. We focus on trustworthy signals anyone can act on.
