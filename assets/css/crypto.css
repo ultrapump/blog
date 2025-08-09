@@ -89,7 +89,7 @@ html, body {
   .header-left { gap: 1rem; flex-wrap: wrap; }
   .header-right { gap: 0.75rem; }
   .crypto-logo { font-size: 1rem; letter-spacing: 1.5px; }
-  .cta-button, .cta-button:visited { padding: 0 0.5rem; font-size: 0.6rem; letter-spacing: 0.1px; height: 28px; min-width: auto; }
+  .cta-button, .cta-button:visited { padding: 0 0.5rem; font-size: 0.6rem; letter-spacing: 0.1px; height: 28px; min-width: auto; color: var(--text-primary); }
   .social-icon { width: 28px; height: 28px; }
   .social-icons { gap: 0.25rem; }
   .crypto-status { font-size: 0.8rem; }
@@ -175,7 +175,7 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 2.5rem 1.5rem;
   min-width: 0; /* Prevents flex item from overflowing */
   justify-content: space-between;
 }
@@ -265,7 +265,7 @@ html, body {
   }
   
   .tile-left {
-    padding: 1.25rem;
+    padding: 1.25rem 1.25rem 2rem 1.25rem;
     order: 2;
   }
   
