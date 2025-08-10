@@ -175,9 +175,9 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+  padding: 1.5rem;
   min-width: 0; /* Prevents flex item from overflowing */
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .tile-right {
@@ -216,9 +216,8 @@ html, body {
 .tile-description { 
   color: var(--text-secondary); 
   line-height: 1.4; 
-  margin: 0; 
+  margin: 0 0 1rem 0; 
   font-size: 0.85rem;
-  flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
@@ -265,7 +264,7 @@ html, body {
   }
   
   .tile-left {
-    padding: 1.25rem 1.25rem 2rem 1.25rem;
+    padding: 1.25rem;
     order: 2;
   }
   
