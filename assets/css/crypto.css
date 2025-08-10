@@ -104,21 +104,22 @@ html, body {
 .grid-overlay { position: fixed; inset: 0; background-image: linear-gradient(rgba(51,51,51,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(51,51,51,0.3) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
 
 .site-content { line-height: 1.7; font-feature-settings: 'kern' 1, 'liga' 1; }
-.site-content h1, .site-content h2, .site-content h3 { margin-top: 1.5rem; font-weight: 600; letter-spacing: -0.02em; position: relative; }
+.site-content h1, .site-content h2, .site-content h3 { margin-top: 1.5rem; font-weight: 600; letter-spacing: -0.02em; }
 .site-content h1 { font-size: 2.25rem; }
 .site-content h2 { font-size: 1.75rem; }
 .site-content h3 { font-size: 1.375rem; }
 
-/* Heading fragment links */
-.site-content h1,
-.site-content h2,
-.site-content h3 {
+/* Heading fragment links - only for post content */
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  position: relative;
   scroll-margin-top: 5rem; /* Account for fixed header */
 }
 
-.site-content h1:hover .heading-anchor,
-.site-content h2:hover .heading-anchor,
-.site-content h3:hover .heading-anchor {
+.post-content h1:hover .heading-anchor,
+.post-content h2:hover .heading-anchor,
+.post-content h3:hover .heading-anchor {
   opacity: 0.7;
 }
 
