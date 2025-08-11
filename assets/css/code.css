@@ -2,6 +2,7 @@
 .highlight pre, pre.highlight {
   background: rgba(20, 20, 20, 0.9);
   color: #e6e6e6;
+  font-size: 0.875rem;
 }
 .highlight .c { color: #6a9955 } /* Comment */
 .highlight .k { color: #c586c0 } /* Keyword */
@@ -14,7 +15,7 @@
 
 /* Inline code styling (distinct chip look) */
 /* Scope to inline contexts only */
-pre code { background: transparent; border: 0; padding: 0; box-shadow: none; }
+pre code { background: transparent; border: 0; padding: 0; box-shadow: none; font-size: 0.875rem; }
 
 code {
   display: inline-block;
@@ -25,6 +26,7 @@ code {
   line-height: 1.2;
   font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
   font-weight: 500;
+  font-size: 0.875rem;
   letter-spacing: 0.1px;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03), 0 0 0 3px rgba(0,255,136,0.06);
 }

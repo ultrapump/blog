@@ -143,8 +143,8 @@ html, body {
 .site-content blockquote { border-left: 3px solid var(--border-subtle); padding-left: 1rem; color: var(--text-secondary); font-style: italic; }
 .site-content img { max-width: 100%; display: block; margin: 1rem auto; }
 
-.post .post-content pre { background: rgba(26, 26, 26, 0.7); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1rem; overflow: auto; }
-.post .post-content code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; }
+.post .post-content pre { background: rgba(26, 26, 26, 0.7); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1rem; overflow: auto; font-size: 0.875rem; }
+.post .post-content code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 0.875rem; }
 
 .mermaid { background: rgba(26,26,26,0.6); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
 
@@ -254,6 +254,11 @@ html, body {
   .crypto-header { padding: 0.75rem 1rem; }
   .site-content { margin: 6rem auto 2rem !important; padding: 0 1rem !important; }
   .blog-grid { grid-template-columns: 1fr; gap: 1rem; }
+  
+  /* Ensure consistent code block font sizes on mobile */
+  .post .post-content pre { font-size: 0.875rem; }
+  .post .post-content code, code { font-size: 0.875rem; }
+  .post .post-content pre code { font-size: 0.875rem; }
   
   .post-tile { 
     height: auto;
