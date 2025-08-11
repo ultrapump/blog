@@ -35,6 +35,8 @@ We take on responsibility for network policy and firewalling at the cloud and no
 
 ## Ingress model on VKE
 
+**Disclaimer:** The following steps are only required due to current VKE limitations and bugs. In a fully functional Kubernetes environment, node-level TLS termination should require minimal additional firewall or CNI configuration.
+
 - nginx Ingress runs as a DaemonSet with `hostNetwork: true` so it binds to `:80` and `:443` on every node
 - Cloudflare IP ranges are allow‑listed on the cloud firewall and `ufw` on each node
 - Health endpoints are probed through Cloudflare
@@ -98,7 +100,7 @@ A `curl` that hangs at the `Trying...` stage is a classic sign of a network-leve
 Our troubleshooting journey began, following a logical path from the outside in:
 
 1.  **DNS:** An initial misconfiguration pointed to the wrong IP. A quick fix, but the problem persisted. This was our first red herring.
-2.  **Cloud firewall:** Using `vultr-cli`, we confirmed the firewall group allowed inbound 80/443 only from Cloudflare IP ranges; rules were present and counters were incrementing.
+2.  **Cloud firewall:** Using `vultr-cli`, we confirmed the firewall group allowed inbound 80/443 only from Cloudflare IP ranges; rules were present and counters were incrementing. (Note: If VKE had built-in Cloudflare firewall integration with up-to-date IP ranges, this manual configuration would be unnecessary.)
 3.  **Node firewall:** We SSH'd into the node and checked `ufw status`. The allow‑lists matched Cloudflare and were active.
 4.  **nginx process:** Still on the node, we ran `sudo netstat -tulpn | grep nginx`. This confirmed that the nginx process was, in fact, listening on `0.0.0.0:80` and `0.0.0.0:443`.
 
@@ -117,6 +119,8 @@ sudo iptables -I cali-INPUT -p tcp --dport 443 -j ACCEPT
 It worked-briefly. Felix, Calico’s agent, reconciled the rules and removed our manual change. The problem wasn’t a missing rule; it was a control‑plane configuration gap.
 
 ## Chapter 4: The "Aha!" Moment - Configuration Drift
+
+**Disclaimer:** The configuration inconsistency described below represents a VKE platform bug. Kubernetes clusters provisioned through the same managed service should have identical CNI configurations by default.
 
 Why did this work in the EU and APAC but not in the US? The only possible answer was that the clusters were not identical. We pulled the YAML definition of the `calico-node` DaemonSet from both the working EU cluster and the broken US cluster and compared them.
 
@@ -157,6 +161,8 @@ The `calico-node` pod restarted, this time with the eBPF data plane enabled. The
 This was a textbook case of configuration drift. A subtle provisioning difference created a critical, hard‑to‑diagnose failure.
 
 ## Hardening and runbook
+
+**Disclaimer:** These hardening steps are defensive measures against VKE platform inconsistencies. On a mature managed Kubernetes service, most of these safeguards would be unnecessary.
 
 - Baseline Calico config via IaC (Terraform/Argo CD) and drift detection
 - Pin the ingress image tag; roll with canaries per region
